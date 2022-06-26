@@ -5,7 +5,6 @@ import like from './assets/img/like.svg';
 import profile from './assets/img/profile.svg';
 import labelImg from './assets/img/slider1-1.jpg';
 import sliderImg from './assets/img/slider1.png';
-import search from './assets/img/search.svg';
 import sneaker1 from './assets/img/sneaker-1.jpg';
 import sneaker2 from './assets/img/sneaker-2.jpg';
 import sneaker3 from './assets/img/sneaker-3.jpg';
@@ -47,9 +46,9 @@ function App() {
                         <img className="labelImg" src={labelImg} alt="labelImg"/>
                         <img src={sliderImg} alt="frog"/>
                         <div className="slider__arrow-right">
-                            <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
+                            <svg width={9} height={14} viewBox="0 0 7 12" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 0.999999L6 6L1 11" stroke="#C8C8C8" strokeWidth="1.5" strokeLinecap="round"
+                                <path d="M1 0.999999L6 6L1 11" stroke="#cbcbcb" strokeWidth="1.5" strokeLinecap="round"
                                       strokeLinejoin="round"/>
                             </svg>
                         </div>
@@ -59,7 +58,12 @@ function App() {
                     <div className="block">
                         <h1 className="block__title">Все кроссовки</h1>
                         <div className="block__input">
-                            <img src={search} alt="search"/>
+                            <svg width={16} height={16} viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15.25 15.25L11.8855 11.8795L15.25 15.25ZM13.75 7.375C13.75 9.06576 13.0784 10.6873 11.8828 11.8828C10.6873 13.0784 9.06576 13.75 7.375 13.75C5.68424 13.75 4.06274 13.0784 2.86719 11.8828C1.67165 10.6873 1 9.06576 1 7.375C1 5.68424 1.67165 4.06274 2.86719 2.86719C4.06274 1.67165 5.68424 1 7.375 1C9.06576 1 10.6873 1.67165 11.8828 2.86719C13.0784 4.06274 13.75 5.68424 13.75 7.375V7.375Z"
+                                    stroke="#ececec" strokeWidth="2" strokeLinecap="round"/>
+                            </svg>
                             <input placeholder={'Поиск...'} type="text"/>
                         </div>
                     </div>
@@ -87,11 +91,11 @@ function App() {
                                         <span>12 999 руб.</span>
                                     </div>
                                     <div className="item__add">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        <svg width={18} height={18} viewBox="0 0 12 12" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M10.6653 5.13122H7.20214V1.66821C7.20214 0.332846 5.13114 0.332846 5.13114 1.66821V5.13122H1.668C0.332935 5.13122 0.332935 7.20215 1.668 7.20215H5.13114V10.6652C5.13114 12.0005 7.20214 12.0005 7.20214 10.6652V7.20215H10.6653C12.0005 7.20215 12.0005 5.13122 10.6653 5.13122Z"
-                                                fill="#D3D3D3"/>
+                                                fill="#ececec"/>
                                         </svg>
                                     </div>
                                 </div>
@@ -120,11 +124,11 @@ function App() {
                                         <span>12 999 руб.</span>
                                     </div>
                                     <div className="item__add active">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        <svg width={18} height={18} viewBox="0 0 12 12" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M10.6653 5.13122H7.20214V1.66821C7.20214 0.332846 5.13114 0.332846 5.13114 1.66821V5.13122H1.668C0.332935 5.13122 0.332935 7.20215 1.668 7.20215H5.13114V10.6652C5.13114 12.0005 7.20214 12.0005 7.20214 10.6652V7.20215H10.6653C12.0005 7.20215 12.0005 5.13122 10.6653 5.13122Z"
-                                                fill="#D3D3D3"/>
+                                                fill="#ececec"/>
                                         </svg>
                                     </div>
                                 </div>
@@ -153,11 +157,11 @@ function App() {
                                         <span>8 499 руб.</span>
                                     </div>
                                     <div className="item__add">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        <svg width={18} height={18} viewBox="0 0 12 12" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M10.6653 5.13122H7.20214V1.66821C7.20214 0.332846 5.13114 0.332846 5.13114 1.66821V5.13122H1.668C0.332935 5.13122 0.332935 7.20215 1.668 7.20215H5.13114V10.6652C5.13114 12.0005 7.20214 12.0005 7.20214 10.6652V7.20215H10.6653C12.0005 7.20215 12.0005 5.13122 10.6653 5.13122Z"
-                                                fill="#D3D3D3"/>
+                                                fill="#ececec"/>
                                         </svg>
                                     </div>
                                 </div>
@@ -186,11 +190,11 @@ function App() {
                                         <span>8 999 руб.</span>
                                     </div>
                                     <div className="item__add">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        <svg width={18} height={18} viewBox="0 0 12 12" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M10.6653 5.13122H7.20214V1.66821C7.20214 0.332846 5.13114 0.332846 5.13114 1.66821V5.13122H1.668C0.332935 5.13122 0.332935 7.20215 1.668 7.20215H5.13114V10.6652C5.13114 12.0005 7.20214 12.0005 7.20214 10.6652V7.20215H10.6653C12.0005 7.20215 12.0005 5.13122 10.6653 5.13122Z"
-                                                fill="#D3D3D3"/>
+                                                fill="#ececec"/>
                                         </svg>
                                     </div>
                                 </div>
@@ -219,11 +223,11 @@ function App() {
                                         <span>15 199 руб.</span>
                                     </div>
                                     <div className="item__add">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        <svg width={18} height={18} viewBox="0 0 12 12" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M10.6653 5.13122H7.20214V1.66821C7.20214 0.332846 5.13114 0.332846 5.13114 1.66821V5.13122H1.668C0.332935 5.13122 0.332935 7.20215 1.668 7.20215H5.13114V10.6652C5.13114 12.0005 7.20214 12.0005 7.20214 10.6652V7.20215H10.6653C12.0005 7.20215 12.0005 5.13122 10.6653 5.13122Z"
-                                                fill="#D3D3D3"/>
+                                                fill="#ececec"/>
                                         </svg>
                                     </div>
                                 </div>
@@ -252,11 +256,11 @@ function App() {
                                         <span>11 299 руб.</span>
                                     </div>
                                     <div className="item__add">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        <svg width={18} height={18} viewBox="0 0 12 12" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M10.6653 5.13122H7.20214V1.66821C7.20214 0.332846 5.13114 0.332846 5.13114 1.66821V5.13122H1.668C0.332935 5.13122 0.332935 7.20215 1.668 7.20215H5.13114V10.6652C5.13114 12.0005 7.20214 12.0005 7.20214 10.6652V7.20215H10.6653C12.0005 7.20215 12.0005 5.13122 10.6653 5.13122Z"
-                                                fill="#D3D3D3"/>
+                                                fill="#ececec"/>
                                         </svg>
                                     </div>
                                 </div>
@@ -285,11 +289,11 @@ function App() {
                                         <span>10 799 руб.</span>
                                     </div>
                                     <div className="item__add">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        <svg width={18} height={18} viewBox="0 0 12 12" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M10.6653 5.13122H7.20214V1.66821C7.20214 0.332846 5.13114 0.332846 5.13114 1.66821V5.13122H1.668C0.332935 5.13122 0.332935 7.20215 1.668 7.20215H5.13114V10.6652C5.13114 12.0005 7.20214 12.0005 7.20214 10.6652V7.20215H10.6653C12.0005 7.20215 12.0005 5.13122 10.6653 5.13122Z"
-                                                fill="#D3D3D3"/>
+                                                fill="#ececec"/>
                                         </svg>
                                     </div>
                                 </div>
@@ -318,11 +322,11 @@ function App() {
                                         <span>16 499 руб.</span>
                                     </div>
                                     <div className="item__add">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        <svg width={18} height={18} viewBox="0 0 12 12" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M10.6653 5.13122H7.20214V1.66821C7.20214 0.332846 5.13114 0.332846 5.13114 1.66821V5.13122H1.668C0.332935 5.13122 0.332935 7.20215 1.668 7.20215H5.13114V10.6652C5.13114 12.0005 7.20214 12.0005 7.20214 10.6652V7.20215H10.6653C12.0005 7.20215 12.0005 5.13122 10.6653 5.13122Z"
-                                                fill="#D3D3D3"/>
+                                                fill="#ececec"/>
                                         </svg>
                                     </div>
                                 </div>
@@ -351,11 +355,11 @@ function App() {
                                         <span>13 999 руб.</span>
                                     </div>
                                     <div className="item__add">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        <svg width={18} height={18} viewBox="0 0 12 12" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M10.6653 5.13122H7.20214V1.66821C7.20214 0.332846 5.13114 0.332846 5.13114 1.66821V5.13122H1.668C0.332935 5.13122 0.332935 7.20215 1.668 7.20215H5.13114V10.6652C5.13114 12.0005 7.20214 12.0005 7.20214 10.6652V7.20215H10.6653C12.0005 7.20215 12.0005 5.13122 10.6653 5.13122Z"
-                                                fill="#D3D3D3"/>
+                                                fill="#ececec"/>
                                         </svg>
                                     </div>
                                 </div>
@@ -384,11 +388,11 @@ function App() {
                                         <span>11 299 руб.</span>
                                     </div>
                                     <div className="item__add">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        <svg width={18} height={18} viewBox="0 0 12 12" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M10.6653 5.13122H7.20214V1.66821C7.20214 0.332846 5.13114 0.332846 5.13114 1.66821V5.13122H1.668C0.332935 5.13122 0.332935 7.20215 1.668 7.20215H5.13114V10.6652C5.13114 12.0005 7.20214 12.0005 7.20214 10.6652V7.20215H10.6653C12.0005 7.20215 12.0005 5.13122 10.6653 5.13122Z"
-                                                fill="#D3D3D3"/>
+                                                fill="#ececec"/>
                                         </svg>
                                     </div>
                                 </div>

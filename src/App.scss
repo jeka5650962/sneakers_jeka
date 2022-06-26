@@ -55,7 +55,7 @@ h4 {
 
 .header {
     padding: 44px 0;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid #ececec;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -151,7 +151,7 @@ h4 {
         height: 35px;
         border-radius: 43px;
         background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+        box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
         position: absolute;
         top: 45%;
         right: 20px;
@@ -175,7 +175,7 @@ h4 {
         &__input {
             display: flex;
             align-items: center;
-            img {
+            svg {
                 position: relative;
                 top: 0;
                 left: 30px;
@@ -184,9 +184,14 @@ h4 {
         input {
             width: 250px;
             height: 45px;
-            border: 1px solid #f3f3f3;
+            border: 1px solid #ececec;
             border-radius: 10px;
             padding: 0 46px;
+            transition: all 0.3s ease 0s;
+            &:focus {
+                border: 1px solid #cbcbcb;
+                box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
+            }
         }
     }
     .sneakers {
@@ -214,7 +219,7 @@ h4 {
                 display: flex;
                 flex-direction: column;
                 background-color: #fff;
-                border: 1px solid #f3f3f3;
+                border: 1px solid #ececec;
                 border-radius: 40px;
                 padding: 30px;
                 position: relative;
@@ -222,7 +227,6 @@ h4 {
                 &:hover {
                     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.05);
                     transform: scale(1.05);
-                    cursor: pointer;
                 }
             }
             &__favorites {
@@ -237,6 +241,15 @@ h4 {
                 position: absolute;
                 top: 30px;
                 left: 30px;
+                cursor: pointer;
+                transition: all 0.3s ease 0s;
+                &:hover {
+                    border: 1px solid #cbcbcb;
+                    background-color: #cbcbcb;
+                }
+                &:hover svg path {
+                    fill: #fff;
+                }
                 &.active {
                     background-color: #fef0f0;
                     border: none;
@@ -272,11 +285,19 @@ h4 {
                 width: 32px;
                 height: 32px;
                 background-color: #fff;
-                border: 1px solid #f2f2f2;
+                border: 1px solid #ececec;
                 border-radius: 8px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                cursor: pointer;
+                &:hover {
+                    border: 1px solid #cbcbcb;
+                    background-color: #cbcbcb;
+                }
+                &:hover svg path {
+                    fill: #fff;
+                }
                 &.active {
                     background: linear-gradient(180deg, #89f09c 0%, #3cc755 100%);
                     border: none;

@@ -19,6 +19,21 @@ import sneaker10 from './assets/img/sneaker-10.jpg';
 function App() {
     return (
         <div className="wrapper">
+            <div className="overlay">
+                <div className="drawer">
+                    <h5>Корзина</h5>
+                    <div className="drawer__body">
+                        <div className="drawer__items">
+                            <div className="drawer__item item">
+                                Товар
+                            </div>
+                        </div>
+                        <div className="drawer__info">
+                            <p>ЦЕНА</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className="container">
                 <header className="header">
                     <div className="header__logo logo">

@@ -46,7 +46,7 @@ function App() {
                                     <img src={sneaker4} alt="sneaker"/>
                                 </div>
                                 <div className="item__info info">
-                                    <h3 className="info__name">Кроссовки Puma X Aka Boku Future Rider</h3>
+                                    <h3 className="info__name">Кроссовки Puma X Aka Future Rider</h3>
                                     <span className="info__price">8 999 руб.</span>
                                 </div>
                                 <button className="item__btn">
@@ -70,7 +70,16 @@ function App() {
                                 <div className="tax__line"></div>
                                 <div className="tax__value">1 074 руб.</div>
                             </div>
-                            <button className="info__btn button">Оформить заказ</button>
+                            <button className="info__btn button">
+                                Оформить заказ
+                                <svg width={16} height={14} viewBox="0 0 16 14" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 7H14.7143" stroke="white" strokeWidth="2" strokeLinecap="round"
+                                          strokeLinejoin="round"/>
+                                    <path d="M8.71436 1L14.7144 7L8.71436 13" stroke="white" strokeWidth="2"
+                                          strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -239,7 +248,7 @@ function App() {
                                 <div className="item__image">
                                     <img src={sneaker4} alt="sneaker"/>
                                 </div>
-                                <h3 className="item__name">Кроссовки Puma X Aka Boku Future Rider</h3>
+                                <h3 className="item__name">Кроссовки Puma X Aka Future Rider</h3>
                                 <div className="item__costs">
                                     <div className="item__price">
                                         <h4>Цена:</h4>
@@ -305,7 +314,7 @@ function App() {
                                 <div className="item__image">
                                     <img src={sneaker6} alt="sneaker"/>
                                 </div>
-                                <h3 className="item__name">Мужские Кроссовки Nike Kyrie 7</h3>
+                                <h3 className="item__name">Мужские Кроссовки Nike 7</h3>
                                 <div className="item__costs">
                                     <div className="item__price">
                                         <h4>Цена:</h4>
@@ -437,7 +446,7 @@ function App() {
                                 <div className="item__image">
                                     <img src={sneaker10} alt="sneaker"/>
                                 </div>
-                                <h3 className="item__name">Мужские Кроссовки Nike Kyrie Flytrap IV</h3>
+                                <h3 className="item__name">Мужские Кроссовки Nike Flytrap IV</h3>
                                 <div className="item__costs">
                                     <div className="item__price">
                                         <h4>Цена:</h4>

@@ -70,6 +70,25 @@ h5 {
     background-color: #fff;
     box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
     padding: 30px;
+    .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__btn {
+            width: 32px;
+            height: 32px;
+            border: 2px solid #cbcbcb;
+            border-radius: 8px;
+            background-color: #fff;
+            transition: all 0.3s ease 0s;
+            &:hover {
+                background-color: #cbcbcb;
+                svg path {
+                    fill: #fff;
+                }
+            }
+        }
+    }
     &__body {
         display: flex;
         flex-direction: column;

@@ -217,7 +217,6 @@ h5 {
 
 .container {
     max-width: 1080px;
-    min-height: 1526px;
     background-color: #fff;
     border-radius: 20px;
     margin: 0 auto;
@@ -339,6 +338,7 @@ h5 {
 }
 
 .content {
+    margin: 0 0 -40px 0;
     .block {
         display: flex;
         justify-content: space-between;

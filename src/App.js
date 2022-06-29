@@ -31,8 +31,14 @@ function App() {
                         <SearchInput/>
                     </div>
                     <div className="sneakers">
-                        {arr.map(obj => (
-                            <Card title={obj.title} price={obj.price} imageUrl={obj.imageUrl}/>
+                        {arr.map((obj) => (
+                            <Card
+                                title={obj.title}
+                                price={obj.price}
+                                imageUrl={obj.imageUrl}
+                                onClickPlusButton={() => console.log('Нажали на кнопку Плюс')}
+                                onClickFavoritesButton={() => console.log('Добавили в Избранное')}
+                            />
                         ))}
                     </div>
                 </main>

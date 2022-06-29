@@ -1,15 +1,10 @@
 import styles from './Card.module.scss';
 
 function Card(props) {
-
-    const onClickButton = () => {
-        alert(props.title);
-    };
-
     return (
         <div className={styles.item}>
             <div className={styles.item__body}>
-                <button className={styles.item__favorites}>
+                <button onClick={props.onClickFavoritesButton} className={styles.item__favorites}>
                     <svg width={18} height={18} version="1.0" xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 1280.000000 1189.000000"
                          preserveAspectRatio="xMidYMid meet">
@@ -29,7 +24,7 @@ function Card(props) {
                         <h4>Цена:</h4>
                         <span>{props.price} руб.</span>
                     </div>
-                    <button onClick={ () => {onClickButton()} } className={styles.item__add}>
+                    <button onClick={props.onClickPlusButton} className={styles.item__add}>
                         <svg width={18} height={18} viewBox="0 0 12 12" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path

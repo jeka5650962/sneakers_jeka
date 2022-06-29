@@ -1,7 +1,7 @@
 import labelImg from "../assets/img/slider1-1.jpg";
 import sliderImg from "../assets/img/slider1.png";
 
-const Slider = () => {
+function Slider() {
     return (
         <div className="slider">
             <div className="slider__info info">

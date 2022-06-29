@@ -3,7 +3,7 @@ import cart from "../assets/img/cart.svg";
 import like from "../assets/img/like.svg";
 import profile from "../assets/img/profile.svg";
 
-const Header = () => {
+function Header() {
     return (
         <header className="header">
             <div className="header__logo logo">

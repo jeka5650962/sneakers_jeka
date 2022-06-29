@@ -1,7 +1,4 @@
-import sneaker2 from "../assets/img/sneaker-2.jpg";
-import sneaker4 from "../assets/img/sneaker-4.jpg";
-
-const Drawer = () => {
+function Drawer() {
     return (
         <div className="overlay">
             <div className="drawer">
@@ -20,7 +17,7 @@ const Drawer = () => {
                     <div className="drawer__items">
                         <div className="drawer__item item">
                             <div className="item__img">
-                                <img src={sneaker2} alt="sneaker"/>
+                                <img src={'img/sneakers/2.jpg'} alt="sneaker"/>
                             </div>
                             <div className="item__info info">
                                 <h3 className="info__name">Мужские Кроссовки Nike Air Max 270</h3>
@@ -37,7 +34,7 @@ const Drawer = () => {
                         </div>
                         <div className="drawer__item item">
                             <div className="item__img">
-                                <img src={sneaker4} alt="sneaker"/>
+                                <img src={'img/sneakers/4.jpg'} alt="sneaker"/>
                             </div>
                             <div className="item__info info">
                                 <h3 className="info__name">Кроссовки Puma X Aka Future Rider</h3>

@@ -1,9 +1,9 @@
 import './App.scss';
-import Header from "./components/Header";
-import Slider from "./components/Slider";
-import Drawer from "./components/Drawer";
+import Header from "./components/Header/Header";
+import Slider from "./components/Slider/Slider";
+import Drawer from "./components/Drawer/Drawer";
 import Card from "./components/Card/Card";
-import SearchInput from "./components/SearchInput";
+import SearchInput from "./components/SearchInput/SearchInput";
 
 const arr = [
     {title: 'Мужские Кроссовки Nike Blazer Mid Suede', price: 12999, imageUrl: 'img/sneakers/1.jpg'},

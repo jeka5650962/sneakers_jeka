@@ -1,10 +1,12 @@
+import styles from './Drawer.module.scss';
+
 function Drawer() {
     return (
-        <div className="overlay">
-            <div className="drawer">
-                <div className="drawer__top top">
+        <div className={styles.overlay}>
+            <div className={styles.drawer}>
+                <div className={styles.top}>
                     <h5>Корзина</h5>
-                    <button className="top__btn">
+                    <button className={styles.top__btn}>
                         <svg width={18} height={18} viewBox="0 0 10 10" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -13,17 +15,17 @@ function Drawer() {
                         </svg>
                     </button>
                 </div>
-                <div className="drawer__body">
-                    <div className="drawer__items">
-                        <div className="drawer__item item">
-                            <div className="item__img">
+                <div className={styles.drawer__body}>
+                    <div className={styles.drawer__items}>
+                        <div className={styles.item}>
+                            <div className={styles.item__img}>
                                 <img src={'img/sneakers/2.jpg'} alt="sneaker"/>
                             </div>
-                            <div className="item__info info">
-                                <h3 className="info__name">Мужские Кроссовки Nike Air Max 270</h3>
-                                <span className="info__price">12 999 руб.</span>
+                            <div className={styles.info}>
+                                <h3 className={styles.info__name}>Мужские Кроссовки Nike Air Max 270</h3>
+                                <span className={styles.info__price}>12 999 руб.</span>
                             </div>
-                            <button className="item__btn">
+                            <button className={styles.item__btn}>
                                 <svg width={11} height={11} viewBox="0 0 10 10" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -32,15 +34,15 @@ function Drawer() {
                                 </svg>
                             </button>
                         </div>
-                        <div className="drawer__item item">
-                            <div className="item__img">
+                        <div className={styles.item}>
+                            <div className={styles.item__img}>
                                 <img src={'img/sneakers/4.jpg'} alt="sneaker"/>
                             </div>
-                            <div className="item__info info">
-                                <h3 className="info__name">Кроссовки Puma X Aka Future Rider</h3>
-                                <span className="info__price">8 999 руб.</span>
+                            <div className={styles.info}>
+                                <h3 className={styles.info__name}>Кроссовки Puma X Aka Future Rider</h3>
+                                <span className={styles.info__price}>8 999 руб.</span>
                             </div>
-                            <button className="item__btn">
+                            <button className={styles.item__btn}>
                                 <svg width={11} height={11} viewBox="0 0 10 10" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -50,18 +52,18 @@ function Drawer() {
                             </button>
                         </div>
                     </div>
-                    <div className="drawer__info info">
-                        <div className="info__sum sum">
-                            <div className="sum__text">Итого:</div>
-                            <div className="sum__line"></div>
-                            <div className="sum__value">21 498 руб.</div>
+                    <div className={styles.drawer__info}>
+                        <div className={styles.sum}>
+                            <div className={styles.sum__text}>Итого:</div>
+                            <div className={styles.sum__line}></div>
+                            <div className={styles.sum__value}>21 498 руб.</div>
                         </div>
-                        <div className="info__tax tax">
-                            <div className="tax__text">Налог 5%:</div>
-                            <div className="tax__line"></div>
-                            <div className="tax__value">1 074 руб.</div>
+                        <div className={styles.tax}>
+                            <div className={styles.tax__text}>Налог 5%:</div>
+                            <div className={styles.tax__line}></div>
+                            <div className={styles.tax__value}>1 074 руб.</div>
                         </div>
-                        <button className="info__btn button">
+                        <button className={styles.button}>
                             Оформить заказ
                             <svg width={16} height={14} viewBox="0 0 16 14" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">

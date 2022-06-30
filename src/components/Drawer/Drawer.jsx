@@ -23,7 +23,7 @@ function Drawer() {
                             </div>
                             <div className={styles.info}>
                                 <h3 className={styles.info__name}>Мужские Кроссовки Nike Air Max 270</h3>
-                                <span className={styles.info__price}>12 999 руб.</span>
+                                <span className={styles.info__price}>12 999 ₽</span>
                             </div>
                             <button className={styles.item__btn}>
                                 <svg width={11} height={11} viewBox="0 0 10 10" fill="none"
@@ -40,7 +40,7 @@ function Drawer() {
                             </div>
                             <div className={styles.info}>
                                 <h3 className={styles.info__name}>Кроссовки Puma X Aka Future Rider</h3>
-                                <span className={styles.info__price}>8 999 руб.</span>
+                                <span className={styles.info__price}>8 999 ₽</span>
                             </div>
                             <button className={styles.item__btn}>
                                 <svg width={11} height={11} viewBox="0 0 10 10" fill="none"
@@ -56,12 +56,12 @@ function Drawer() {
                         <div className={styles.sum}>
                             <div className={styles.sum__text}>Итого:</div>
                             <div className={styles.sum__line}></div>
-                            <div className={styles.sum__value}>21 498 руб.</div>
+                            <div className={styles.sum__value}>21 498 ₽</div>
                         </div>
                         <div className={styles.tax}>
                             <div className={styles.tax__text}>Налог 5%:</div>
                             <div className={styles.tax__line}></div>
-                            <div className={styles.tax__value}>1 074 руб.</div>
+                            <div className={styles.tax__value}>1 074 ₽</div>
                         </div>
                         <button className={styles.button}>
                             Оформить заказ

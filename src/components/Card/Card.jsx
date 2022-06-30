@@ -35,7 +35,7 @@ function Card(props) {
                 <div className={styles.item__costs}>
                     <div className={styles.item__price}>
                         <h4>Цена:</h4>
-                        <span>{props.price} руб.</span>
+                        <span>{props.price} ₽</span>
                     </div>
                     <button onClick={addPlusOnClick}
                             className={isAdded ? `${styles.item__add} ${styles.checked}` : `${styles.item__add}`}>

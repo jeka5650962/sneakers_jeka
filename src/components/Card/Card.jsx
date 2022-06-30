@@ -7,10 +7,10 @@ function Card(props) {
     const [isAdded, setIsAdded] = React.useState(false);
 
     const addFavoritesOnClick = () => {
-        setIsFavorites(true);
+        setIsFavorites(!isFavorites);
     }
     const addPlusOnClick = () => {
-        setIsAdded(true);
+        setIsAdded(!isAdded);
     }
 
     return (

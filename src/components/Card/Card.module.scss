@@ -39,7 +39,7 @@
         }
         &.checked {
             background-color: #fef0f0;
-            border: none;
+            border: 1px solid #fef0f0;
         }
         &.checked svg path {
             fill: #ff8585;
@@ -78,6 +78,7 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        transition: all 0.3s ease 0s;
         &:hover {
             border: 1px solid #cbcbcb;
             background-color: #cbcbcb;
@@ -86,8 +87,8 @@
             fill: #fff;
         }
         &.checked {
-            background: linear-gradient(180deg, #89f09c 0%, #3cc755 100%);
-            border: none;
+            background-color: #69e880;
+            border: 1px solid #69e880;
             svg path {
                 fill: #fff;
             }

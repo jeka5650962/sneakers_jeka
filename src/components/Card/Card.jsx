@@ -1,10 +1,23 @@
+import React from "react";
 import styles from './Card.module.scss';
 
 function Card(props) {
+
+    const [isFavorites, setIsFavorites] = React.useState(false);
+    const [isAdded, setIsAdded] = React.useState(false);
+
+    const addFavoritesOnClick = () => {
+        setIsFavorites(true);
+    }
+    const addPlusOnClick = () => {
+        setIsAdded(true);
+    }
+
     return (
         <div className={styles.item}>
             <div className={styles.item__body}>
-                <button onClick={props.onClickFavoritesButton} className={styles.item__favorites}>
+                <button onClick={addFavoritesOnClick}
+                        className={isFavorites ? `${styles.item__favorites} ${styles.checked}` : `${styles.item__favorites}`}>
                     <svg width={18} height={18} version="1.0" xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 1280.000000 1189.000000"
                          preserveAspectRatio="xMidYMid meet">
@@ -24,7 +37,8 @@ function Card(props) {
                         <h4>Цена:</h4>
                         <span>{props.price} руб.</span>
                     </div>
-                    <button onClick={props.onClickPlusButton} className={styles.item__add}>
+                    <button onClick={addPlusOnClick}
+                            className={isAdded ? `${styles.item__add} ${styles.checked}` : `${styles.item__add}`}>
                         <svg width={18} height={18} viewBox="0 0 12 12" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path

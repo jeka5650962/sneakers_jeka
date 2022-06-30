@@ -37,11 +37,11 @@
         &:hover svg path {
             fill: #fff;
         }
-        &.active {
+        &.checked {
             background-color: #fef0f0;
             border: none;
         }
-        &.active svg path {
+        &.checked svg path {
             fill: #ff8585;
         }
     }
@@ -85,7 +85,7 @@
         &:hover svg path {
             fill: #fff;
         }
-        &.active {
+        &.checked {
             background: linear-gradient(180deg, #89f09c 0%, #3cc755 100%);
             border: none;
             svg path {

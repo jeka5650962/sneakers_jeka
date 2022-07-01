@@ -1,12 +1,14 @@
 import styles from './Drawer.module.scss';
 
-function Drawer() {
+function Drawer(props) {
     return (
         <div className={styles.overlay}>
             <div className={styles.drawer}>
                 <div className={styles.top}>
                     <h5>Корзина</h5>
-                    <button className={styles.top__btn}>
+                    <button
+                        onClick={props.onClose}
+                        className={styles.top__btn}>
                         <svg width={18} height={18} viewBox="0 0 10 10" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path

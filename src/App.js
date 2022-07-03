@@ -1,27 +1,32 @@
-import React from "react";
-import "./App.scss";
-import Header from "./components/Header/Header";
-import Slider from "./components/Slider/Slider";
-import Drawer from "./components/Drawer/Drawer";
-import Card from "./components/Card/Card";
-import SearchInput from "./components/SearchInput/SearchInput";
+import React from 'react'
+import './App.scss'
+import Header from './components/Header/Header'
+import Slider from './components/Slider/Slider'
+import Drawer from './components/Drawer/Drawer'
+import Card from './components/Card/Card'
+import SearchInput from './components/SearchInput/SearchInput'
 
 function App() {
 
-    const [items, setItems] = React.useState([]);
-    const [cartOpened, setCartOpened] = React.useState(false);
+    const [items, setItems] = React.useState([])
+    const [cartItems, setCartItems] = React.useState([])
+    const [cartOpened, setCartOpened] = React.useState(false)
 
     React.useEffect(() => {
         fetch('https://62beabeb0bc9b125615c7d16.mockapi.io/items').then((res) => {
-            return res.json();
+            return res.json()
         }).then(json => {
-            setItems(json);
+            setItems(json)
         })
     }, [])
 
+    const onAddGoToCart = (obj) => {
+        setCartItems(prev => [...prev, obj])
+    }
+
     return (
         <div className="wrapper">
-            {cartOpened && <Drawer onClose={() => setCartOpened(false)}/>}
+            {cartOpened && <Drawer items={cartItems} onClose={() => setCartOpened(false)}/>}
             <div className="container">
                 <Header
                     onClickOpenCart={() => setCartOpened(true)}
@@ -33,20 +38,21 @@ function App() {
                         <SearchInput/>
                     </div>
                     <div className="sneakers">
-                        {items.map((obj) => (
+                        {items.map((item, index) => (
                             <Card
-                                title={obj.title}
-                                price={obj.price}
-                                imageUrl={obj.imageUrl}
-                                onClickPlusButton={() => console.log('Нажали на кнопку Плюс')}
-                                onClickFavoritesButton={() => console.log('Добавили в Избранное')}
+                                key={index}
+                                title={item.title}
+                                price={item.price}
+                                imageUrl={item.imageUrl}
+                                onClickPlusButton={obj => onAddGoToCart(obj)}
+                                onClickFavoritesButton={obj => console.log(obj)}
                             />
                         ))}
                     </div>
                 </main>
             </div>
         </div>
-    );
+    )
 }
 
-export default App;
+export default App

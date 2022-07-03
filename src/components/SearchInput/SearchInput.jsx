@@ -1,4 +1,4 @@
-import styles from './SearchInput.module.scss';
+import styles from './SearchInput.module.scss'
 
 function SearchInput() {
     return (
@@ -14,4 +14,4 @@ function SearchInput() {
     )
 }
 
-export default SearchInput;
+export default SearchInput

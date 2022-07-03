@@ -1,16 +1,18 @@
-import React from "react";
-import styles from './Card.module.scss';
+import React from 'react'
+import styles from './Card.module.scss'
 
-function Card(props) {
+function Card({imageUrl, title, price, onClickPlusButton, onClickFavoritesButton}) {
 
-    const [isFavorites, setIsFavorites] = React.useState(false);
-    const [isAdded, setIsAdded] = React.useState(false);
+    const [isFavorites, setIsFavorites] = React.useState(false)
+    const [isAdded, setIsAdded] = React.useState(false)
 
     const addFavoritesOnClick = () => {
-        setIsFavorites(!isFavorites);
+        onClickFavoritesButton({imageUrl, title, price})
+        setIsFavorites(!isFavorites)
     }
     const addPlusOnClick = () => {
-        setIsAdded(!isAdded);
+        onClickPlusButton({imageUrl, title, price})
+        setIsAdded(!isAdded)
     }
 
     return (
@@ -29,13 +31,13 @@ function Card(props) {
                     </svg>
                 </button>
                 <div className={styles.item__image}>
-                    <img src={props.imageUrl} alt="sneaker"/>
+                    <img src={imageUrl} alt="sneaker"/>
                 </div>
-                <h3 className={styles.item__name}>{props.title}</h3>
+                <h3 className={styles.item__name}>{title}</h3>
                 <div className={styles.item__costs}>
                     <div className={styles.item__price}>
                         <h4>Цена:</h4>
-                        <span>{props.price} ₽</span>
+                        <span>{price} ₽</span>
                     </div>
                     <button onClick={addPlusOnClick}
                             className={isAdded ? `${styles.item__add} ${styles.checked}` : `${styles.item__add}`}>
@@ -52,4 +54,4 @@ function Card(props) {
     )
 }
 
-export default Card;
+export default Card

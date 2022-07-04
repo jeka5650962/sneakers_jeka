@@ -11,6 +11,7 @@ function App() {
     const [items, setItems] = React.useState([])
     const [cartItems, setCartItems] = React.useState([])
     const [cartOpened, setCartOpened] = React.useState(false)
+    const [searchValue, setSearchValue] = React.useState('')
 
     React.useEffect(() => {
         fetch('https://62beabeb0bc9b125615c7d16.mockapi.io/items').then((res) => {
@@ -24,6 +25,10 @@ function App() {
         setCartItems(prev => [...prev, obj])
     }
 
+    const onChangeSearchInput = (event) => {
+        setSearchValue(event.target.value)
+    }
+
     return (
         <div className="wrapper">
             {cartOpened && <Drawer items={cartItems} onClose={() => setCartOpened(false)}/>}
@@ -35,7 +40,7 @@ function App() {
                 <main className="content">
                     <div className="block">
                         <h1>Все кроссовки</h1>
-                        <SearchInput/>
+                        <SearchInput onChangeSearchInput={onChangeSearchInput}/>
                     </div>
                     <div className="sneakers">
                         {items.map((item, index) => (

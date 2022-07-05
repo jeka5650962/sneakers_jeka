@@ -35,16 +35,35 @@ h5 { font-weight: 700; font-size: 24px; line-height: 29px; }
         display: flex;
         justify-content: space-between;
         margin: 0 0 26px 0;
-        input {
-            width: 250px;
-            height: 45px;
-            border: 1px solid #ececec;
-            border-radius: 10px;
-            padding: 0 46px;
-            transition: all 0.3s ease 0s;
-            &:focus {
-                border: 1px solid #cbcbcb;
-                box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
+        h1 {
+            max-width: 650px;
+        }
+        &__input {
+            display: flex;
+            position: relative;
+            svg {
+                &:nth-child(1) {
+                    position: absolute;
+                    top: 14px;
+                    left: 15px;
+                }
+                &:nth-child(2) {
+                    position: absolute;
+                    top: 16px;
+                    right: 15px;
+                }
+            }
+            input {
+                width: 250px;
+                height: 45px;
+                border: 1px solid #ececec;
+                border-radius: 10px;
+                padding: 0 46px;
+                transition: all 0.3s ease 0s;
+                &:focus {
+                    border: 1px solid #cbcbcb;
+                    box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
+                }
             }
         }
     }

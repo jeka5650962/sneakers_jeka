@@ -4,6 +4,7 @@ import Header from './components/Header/Header'
 import Slider from './components/Slider/Slider'
 import Drawer from './components/Drawer/Drawer'
 import Card from './components/Card/Card'
+import axios from 'axios'
 
 function App() {
 
@@ -13,17 +14,21 @@ function App() {
     const [searchValue, setSearchValue] = React.useState('')
 
     React.useEffect(() => {
-        fetch('https://62beabeb0bc9b125615c7d16.mockapi.io/items').then((res) => {
-            return res.json()
-        }).then(json => {
-            setItems(json)
+        axios.get('https://62beabeb0bc9b125615c7d16.mockapi.io/items').then(res => {
+            setItems(res.data)
+        })
+        axios.get('https://62beabeb0bc9b125615c7d16.mockapi.io/cart').then(res => {
+            setCartItems(res.data)
         })
     }, [])
 
+    // добавление товаров в корзину
     const onAddGoToCart = (obj) => {
+        axios.post('https://62beabeb0bc9b125615c7d16.mockapi.io/cart', obj)
         setCartItems(prev => [...prev, obj])
     }
 
+    // метод в связке с вводом данных в input поиска
     const onChangeSearchInput = (event) => {
         setSearchValue(event.target.value)
     }

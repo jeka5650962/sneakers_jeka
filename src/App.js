@@ -28,6 +28,12 @@ function App() {
         setCartItems(prev => [...prev, obj])
     }
 
+    // удаление товаров из корзины
+    const onRemoveItem = (id) => {
+        // axios.delete(`https://62beabeb0bc9b125615c7d16.mockapi.io/cart/${id}`)
+        setCartItems(prev => prev.filter(item => item.id !== id))
+    }
+
     // метод в связке с вводом данных в input поиска
     const onChangeSearchInput = (event) => {
         setSearchValue(event.target.value)
@@ -35,7 +41,7 @@ function App() {
 
     return (
         <div className="wrapper">
-            {cartOpened && <Drawer items={cartItems} onClose={() => setCartOpened(false)}/>}
+            {cartOpened && <Drawer items={cartItems} onClose={() => setCartOpened(false)} onRemove={onRemoveItem}/>}
             <div className="container">
                 <Header
                     onClickOpenCart={() => setCartOpened(true)}

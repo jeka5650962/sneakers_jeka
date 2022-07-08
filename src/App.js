@@ -10,6 +10,7 @@ function App() {
 
     const [items, setItems] = React.useState([])
     const [cartItems, setCartItems] = React.useState([])
+    const [favorites, setFavorites] = React.useState([])
     const [cartOpened, setCartOpened] = React.useState(false)
     const [searchValue, setSearchValue] = React.useState('')
 
@@ -28,9 +29,15 @@ function App() {
         setCartItems(prev => [...prev, obj])
     }
 
+    // добавление товаров в избранное
+    const onAddToFavorites = (obj) => {
+        axios.post('https://62beabeb0bc9b125615c7d16.mockapi.io/favorites', obj)
+        setFavorites(prev => [...prev, obj])
+    }
+
     // удаление товаров из корзины
     const onRemoveItem = (id) => {
-        // axios.delete(`https://62beabeb0bc9b125615c7d16.mockapi.io/cart/${id}`)
+        axios.delete(`https://62beabeb0bc9b125615c7d16.mockapi.io/cart/${id}`)
         setCartItems(prev => prev.filter(item => item.id !== id))
     }
 
@@ -65,22 +72,23 @@ function App() {
                                         fill="#B5B5B5"/>
                                 </svg>
                             }
-                            <input onChange={onChangeSearchInput} value={searchValue} placeholder={'Поиск ...'} type="text"/>
+                            <input onChange={onChangeSearchInput} value={searchValue} placeholder={'Поиск ...'}
+                                   type="text"/>
                         </div>
                     </div>
                     <div className="sneakers">
                         {items
                             .filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()))
                             .map((item, index) => (
-                            <Card
-                                key={index}
-                                title={item.title}
-                                price={item.price}
-                                imageUrl={item.imageUrl}
-                                onClickPlusButton={obj => onAddGoToCart(obj)}
-                                onClickFavoritesButton={obj => console.log(obj)}
-                            />
-                        ))}
+                                <Card
+                                    key={index}
+                                    title={item.title}
+                                    price={item.price}
+                                    imageUrl={item.imageUrl}
+                                    onClickPlusButton={obj => onAddGoToCart(obj)}
+                                    onClickFavoritesButton={obj => onAddToFavorites(obj)}
+                                />
+                            ))}
                     </div>
                 </main>
             </div>

@@ -29,8 +29,10 @@
         background-color: #fff;
         border: 1px solid #70a21e;
         color: #70a21e;
-        svg path {
-            stroke: #70a21e;
+        svg {
+            path {
+                stroke: #70a21e;
+            }
         }
     }
 }

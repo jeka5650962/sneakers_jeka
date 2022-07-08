@@ -1,4 +1,5 @@
 import styles from './Drawer.module.scss'
+import boxImage from '../../assets/img/box.png'
 
 function Drawer({onClose, items = [], onRemove}) {
     return (
@@ -17,7 +18,28 @@ function Drawer({onClose, items = [], onRemove}) {
                         </svg>
                     </button>
                 </div>
-                <div className={styles.drawer__body}>
+
+                <div className={styles.emptyBasket}>
+                    <div className={styles.emptyBasket__body}>
+                        <div className={styles.emptyBasket__image}>
+                            <img src={boxImage} alt="box"/>
+                        </div>
+                        <div className={styles.emptyBasket__label}>Корзина пустая</div>
+                        <div className={styles.emptyBasket__description}>Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ</div>
+                        <button className={styles.greenButton}>
+                            <svg width={16} height={14} viewBox="0 0 16 14" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 7H14.7143" stroke="white" strokeWidth="2" strokeLinecap="round"
+                                      strokeLinejoin="round"/>
+                                <path d="M8.71436 1L14.7144 7L8.71436 13" stroke="white" strokeWidth="2"
+                                      strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                            Вернуться назад
+                        </button>
+                    </div>
+                </div>
+
+                {/*<div className={styles.drawer__body}>
                     <div className={styles.drawer__items}>
                         {items.map((obj, index) => (
                             <div className={styles.item} key={index}>
@@ -50,7 +72,7 @@ function Drawer({onClose, items = [], onRemove}) {
                             <div className={styles.tax__line}></div>
                             <div className={styles.tax__value}>1 074 ₽</div>
                         </div>
-                        <button className={styles.button}>
+                        <button className={styles.greenButton}>
                             Оформить заказ
                             <svg width={16} height={14} viewBox="0 0 16 14" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +83,7 @@ function Drawer({onClose, items = [], onRemove}) {
                             </svg>
                         </button>
                     </div>
-                </div>
+                </div>*/}
             </div>
         </div>
     )

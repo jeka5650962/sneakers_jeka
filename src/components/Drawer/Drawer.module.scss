@@ -8,7 +8,37 @@
     z-index: 15;
 }
 
+.greenButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #fff;
+    background-color: #70a21e;
+    height: 55px;
+    border-radius: 18px;
+    transition: all 0.3s ease 0s;
+    svg {
+        position: relative;
+        top: 0;
+        left: 40px;
+    }
+    &:hover {
+        background-color: #fff;
+        border: 1px solid #70a21e;
+        color: #70a21e;
+        svg path {
+            stroke: #70a21e;
+        }
+    }
+}
+
 .drawer {
+    display: flex;
+    flex-direction: column;
+
     position: absolute;
     top: 0;
     right: 0;
@@ -131,31 +161,41 @@
                 font-weight: 600;
             }
         }
-        .button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 19px;
-            color: #fff;
-            background-color: #70a21e;
-            height: 55px;
-            border-radius: 18px;
-            transition: all 0.3s ease 0s;
-            svg {
-                position: relative;
-                top: 0;
-                left: 40px;
-            }
-            &:hover {
-                background-color: #fff;
-                border: 1px solid #70a21e;
-                color: #70a21e;
-                svg path {
-                    stroke: #70a21e;
-                }
-            }
+    }
+}
+
+.emptyBasket {
+    margin: 0 20px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__image {
+        margin: 0 0 21px 0;
+        img {}
+    }
+    &__label {
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 27px;
+        margin: 0 0 9px 0;
+    }
+    &__description {
+        font-size: 16px;
+        line-height: 24px;
+        color: #999;
+        text-align: center;
+        margin: 0 0 40px 0;
+    }
+    button {
+        min-width: 245px;
+        svg {
+            transform: rotate(180deg);
+            left: -20px;
         }
     }
 }

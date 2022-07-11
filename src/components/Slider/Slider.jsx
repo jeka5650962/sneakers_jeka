@@ -1,6 +1,6 @@
-import styles from './Slider.module.scss'
-import labelImg from '../../assets/img/slider1-1.jpg'
-import sliderImg from '../../assets/img/slider1.png'
+import styles from "./Slider.module.scss";
+import labelImg from "../../assets/img/slider1-1.jpg";
+import sliderImg from "../../assets/img/slider1.png";
 
 function Slider() {
     return (

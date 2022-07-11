@@ -1,9 +1,9 @@
-import React from 'react'
-import styles from './Card.module.scss'
+import React from "react";
+import styles from "./Card.module.scss";
 
-function Card({imageUrl, title, price, onClickPlusButton, onClickFavoritesButton}) {
+function Card({imageUrl, title, price, onClickPlusButton, onClickFavoritesButton, favorited}) {
 
-    const [isFavorites, setIsFavorites] = React.useState(false)
+    const [isFavorites, setIsFavorites] = React.useState(favorited)
     const [isAdded, setIsAdded] = React.useState(false)
 
     const addFavoritesOnClick = () => {

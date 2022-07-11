@@ -1,5 +1,5 @@
-import styles from './Drawer.module.scss'
-import boxImage from '../../assets/img/box.png'
+import styles from "./Drawer.module.scss";
+import boxImage from "../../assets/img/box.png";
 
 function Drawer({onClose, items = [], onRemove}) {
     return (

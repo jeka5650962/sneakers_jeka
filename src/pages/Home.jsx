@@ -34,9 +34,7 @@ function Home({searchValue, setSearchValue, onChangeSearchInput, items, onAddGoT
                         .map((item, index) => (
                             <Card
                                 key={index}
-                                title={item.title}
-                                price={item.price}
-                                imageUrl={item.imageUrl}
+                                {...item}
                                 onClickPlusButton={obj => onAddGoToCart(obj)}
                                 onClickFavoritesButton={obj => onAddToFavorites(obj)}
                             />

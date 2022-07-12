@@ -34,9 +34,17 @@ function App() {
     }
 
     // добавление товаров в избранное
-    const onAddToFavorites = (obj) => {
-        axios.post('https://62beabeb0bc9b125615c7d16.mockapi.io/favorites', obj)
-        setFavorites(prev => [...prev, obj])
+    const onAddToFavorites = async (obj) => {
+        try {
+            if (favorites.find((favObj) => favObj.id === obj.id)) {
+                axios.delete(`https://62beabeb0bc9b125615c7d16.mockapi.io/favorites/${obj.id}`)
+            } else {
+                const {data} = await axios.post('https://62beabeb0bc9b125615c7d16.mockapi.io/favorites', obj)
+                setFavorites((prev) => [...prev, data])
+            }
+        } catch (error) {
+            alert('Не удалось добавить в Избранное')
+        }
     }
 
     // удаление товаров из корзины
@@ -66,7 +74,12 @@ function App() {
                             onAddToFavorites={onAddToFavorites}
                         />
                     }/>
-                    <Route path="/favorites" element={<Favorites items={favorites}/>}/>
+                    <Route path="/favorites" element={
+                        <Favorites
+                            items={favorites}
+                            onAddToFavorites={onAddToFavorites}
+                        />
+                    }/>
                 </Routes>
             </div>
         </div>

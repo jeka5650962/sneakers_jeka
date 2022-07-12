@@ -29,8 +29,13 @@ function App() {
 
     // добавление товаров в корзину
     const onAddGoToCart = (obj) => {
-        axios.post('https://62beabeb0bc9b125615c7d16.mockapi.io/cart', obj)
-        setCartItems(prev => [...prev, obj])
+        console.log(obj)
+        if (cartItems.find((item) => item.id === obj.id)) {
+            setCartItems((prev) => prev.filter((item) => item.id !== obj.id))
+        } else {
+            axios.post('https://62beabeb0bc9b125615c7d16.mockapi.io/cart', obj)
+            setCartItems((prev) => [...prev, obj])
+        }
     }
 
     // добавление товаров в избранное

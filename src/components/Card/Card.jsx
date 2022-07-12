@@ -11,7 +11,7 @@ function Card({id, imageUrl, title, price, onClickPlusButton, onClickFavoritesBu
         setIsFavorites(!isFavorites)
     }
     const addPlusOnClick = () => {
-        onClickPlusButton({imageUrl, title, price})
+        onClickPlusButton({id, imageUrl, title, price})
         setIsAdded(!isAdded)
     }
 

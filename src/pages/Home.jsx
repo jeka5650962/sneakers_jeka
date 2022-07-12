@@ -35,8 +35,8 @@ function Home({searchValue, setSearchValue, onChangeSearchInput, items, onAddGoT
                             <Card
                                 key={index}
                                 {...item}
-                                onClickPlusButton={obj => onAddGoToCart(obj)}
-                                onClickFavoritesButton={obj => onAddToFavorites(obj)}
+                                onClickPlusButton={(obj) => onAddGoToCart(obj)}
+                                onClickFavoritesButton={(obj) => onAddToFavorites(obj)}
                             />
                         ))}
                 </div>

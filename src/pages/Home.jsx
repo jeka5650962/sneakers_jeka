@@ -2,7 +2,23 @@ import Slider from "../components/Slider/Slider";
 import Card from "../components/Card/Card";
 import React from "react";
 
-function Home({searchValue, setSearchValue, onChangeSearchInput, items, onAddGoToCart, onAddToFavorites}) {
+function Home({cartItems, searchValue, setSearchValue, onChangeSearchInput, items, onAddGoToCart, onAddToFavorites}) {
+    const renderItems = () => {
+        return (
+            items
+                .filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()))
+                .map((item, index) => (
+                    <Card
+                        key={index}
+                        {...item}
+                        onClickPlusButton={(obj) => onAddGoToCart(obj)}
+                        onClickFavoritesButton={(obj) => onAddToFavorites(obj)}
+                        added={cartItems.some((obj) => Number(obj.id) === Number(item.id))}
+                        loading={false}
+                    />
+                ))
+        )
+    }
     return (
         <div>
             <Slider/>
@@ -29,16 +45,7 @@ function Home({searchValue, setSearchValue, onChangeSearchInput, items, onAddGoT
                     </div>
                 </div>
                 <div className="sneakers">
-                    {items
-                        .filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()))
-                        .map((item, index) => (
-                            <Card
-                                key={index}
-                                {...item}
-                                onClickPlusButton={(obj) => onAddGoToCart(obj)}
-                                onClickFavoritesButton={(obj) => onAddToFavorites(obj)}
-                            />
-                        ))}
+                    {renderItems()}
                 </div>
             </main>
         </div>

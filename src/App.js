@@ -16,25 +16,31 @@ function App() {
     const [searchValue, setSearchValue] = React.useState('')
 
     React.useEffect(() => {
-        axios.get('https://62beabeb0bc9b125615c7d16.mockapi.io/items').then(res => {
-            setItems(res.data)
-        })
-        axios.get('https://62beabeb0bc9b125615c7d16.mockapi.io/cart').then(res => {
-            setCartItems(res.data)
-        })
-        axios.get('https://62beabeb0bc9b125615c7d16.mockapi.io/favorites').then(res => {
-            setFavorites(res.data)
-        })
+        async function fetchData() {
+            const cartResponse = await axios.get('https://62beabeb0bc9b125615c7d16.mockapi.io/cart')
+            const favoritesResponse = await axios.get('https://62beabeb0bc9b125615c7d16.mockapi.io/favorites')
+            const itemsResponse = await axios.get('https://62beabeb0bc9b125615c7d16.mockapi.io/items')
+
+            setCartItems(cartResponse.data)
+            setFavorites(favoritesResponse.data)
+            setItems(itemsResponse.data)
+        }
+
+        fetchData()
     }, [])
 
     // добавление товаров в корзину
     const onAddGoToCart = (obj) => {
-        console.log(obj)
-        if (cartItems.find((item) => item.id === obj.id)) {
-            setCartItems((prev) => prev.filter((item) => item.id !== obj.id))
-        } else {
-            axios.post('https://62beabeb0bc9b125615c7d16.mockapi.io/cart', obj)
-            setCartItems((prev) => [...prev, obj])
+        try {
+            if (cartItems.find((item) => Number(item.id) === Number(obj.id))) {
+                axios.delete(`https://62beabeb0bc9b125615c7d16.mockapi.io/cart/${obj.id}`)
+                setCartItems((prev) => prev.filter((item) => Number(item.id) !== Number(obj.id)))
+            } else {
+                axios.post('https://62beabeb0bc9b125615c7d16.mockapi.io/cart', obj)
+                setCartItems((prev) => [...prev, obj])
+            }
+        } catch (error) {
+            alert('Не удалось добавить товар в Корзину')
         }
     }
 
@@ -77,6 +83,7 @@ function App() {
                             items={items}
                             onAddGoToCart={onAddGoToCart}
                             onAddToFavorites={onAddToFavorites}
+                            cartItems={cartItems}
                         />
                     }/>
                     <Route path="/favorites" element={
